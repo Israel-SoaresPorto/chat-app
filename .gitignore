@@ -2,4 +2,6 @@
 **/dist/
 **/build/
 **/coverage/
-database/**
+database/database.db-shm
+database/database.db-wal
+
