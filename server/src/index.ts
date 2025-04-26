@@ -1,5 +1,5 @@
 import express from "express";
-import http, { get, STATUS_CODES } from "http";
+import http from "http";
 import cors from "cors";
 import { Server } from "socket.io";
 import dotenv from "dotenv";
@@ -17,10 +17,7 @@ import { Message } from "./database/types";
 const app = express();
 const server = http.createServer(app);
 
-const envFile =
-  process.env.NODE_ENV === "production" ? ".env" : ".env.development";
-
-dotenv.config({ path: join(__dirname, "../../", envFile) });
+dotenv.config({ path: join(__dirname, "../../", ".env") });
 
 const io = new Server(server, {
   cors: {
